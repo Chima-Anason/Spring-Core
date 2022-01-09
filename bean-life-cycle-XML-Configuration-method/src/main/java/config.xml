@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd"
+    default-init-method="init"
+    default-destroy-method="destroy" 
+    >
+    
+    
+<bean id="studentDAO" class="com.seliniumexpress.bean_life_cycle_XML_Configuration2.StudentDAO">
+	<property name="driver" value="com.mysql.jdbc.Driver"></property>
+	<property name="url" value="jdbc:mysql://127.0.0.1:3306/fllblogwebsite"></property>
+	<property name="username" value="root"></property>
+	<property name="password" value="rootuser"></property>
+
+</bean>
+
+
+<bean id="hello" class="com.seliniumexpress.bean_life_cycle_XML_Configuration2.Hello"/>
+
+
+<!--  
+NOTE:Instead of declaring the INIT and DESTROY method in each bean as shown in the commented beans below 
+   we can just declare a Default INIT and Destroy method at the header and it will handle all the INIT and Destroy method for each Bean
+NOTE:To use this approach make sure the names of the init and destroy method is same in each classes of the java file 
+-->
+
+<!--  
+<bean id="studentDAO" class="com.seliniumexpress.bean_life_cycle_XML_Configuration2.StudentDAO" init-method="init" destroy-method="destroy">
+	<property name="driver" value="com.mysql.jdbc.Driver"></property>
+	<property name="url" value="jdbc:mysql://127.0.0.1:3306/fllblogwebsite"></property>
+	<property name="username" value="root"></property>
+	<property name="password" value="rootuser"></property>
+</bean>
+
+
+<bean id="hello" class="com.seliniumexpress.bean_life_cycle_XML_Configuration2.Hello" init-method="init" destroy-method="destroy"/>
+
+  -->
+
+</beans>
