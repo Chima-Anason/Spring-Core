@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- Note: put @Autowire on top of either the Constructor, the Setter method or the Dependency/property & 
+     Note: <context:annotation-config /> if this tag is not written here the @Autowire on the class wont work -->
+<context:annotation-config />
+
+<bean id="heart" class="com.seleniumexpress.springframework.spring_autowiring_qualifier.Heart" />
+
+<bean id="human" class="com.seleniumexpress.springframework.spring_autowiring_qualifier.Human" />
+
+
+
+
+
+
+<!-- You can choose anyone below and comment the rest -->
+<!-- 1) byType : the class path end name(Heart) in the config.xml file = class type name in the Human class -->
+<!-- <bean id="human" class="com.seleniumexpress.springframework.spring_autowiring_qualifier.Human" autowire="byType"> -->
+
+
+
+
+
+
+<!-- 2) byName :the id of heart in config.xml file = name of the heart in the Human class -->
+<!-- <bean id="human" class="com.seleniumexpress.springframework.spring_autowiring_qualifier.Human" autowire="byName">  -->
+
+
+
+
+<!-- 3) constructor : create a constructor in the Human class and the injection will proceed -->
+<!-- <bean id="human" class="com.seleniumexpress.springframework.spring_autowiring_qualifier.Human" autowire="constructor">  
+</bean> -->
+
+
+</beans>
