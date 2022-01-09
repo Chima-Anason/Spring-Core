@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+<!-- This Tag is to get the values from the properties file(student-info.properties), if this tag is not used it won't return the exact value-->
+<context:property-placeholder location="student-info.properties"/>
+
+<!-- This Tag is used to use the annotation(e.g : @Value, @Required) on the class side, if not called here it wont function as expected -->
+<context:annotation-config />
+
+<bean id="student" class="com.seleniumexpress.springframework.spring_value_required_annotation.Student" >
+    <!-- Note: if i don't want to pass the dynamic value from here i can use the @Value on the Student.java class -->
+    
+   <!-- <property name="name" value="${student.name}"></property>
+   <property name="interestedCourse" value="${student.interestedCourse}"></property>
+   <property name="hobby" value="${student.hobby}"></property> -->
+</bean>
+
+
+</beans>
