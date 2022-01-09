@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+<!-- This Tag is to get the values from the properties file(database-connection-config.properties), if this tag is not used it won't return the exact value-->
+<context:property-placeholder location="database-connection-config.properties"/>
+
+<!-- This Tag is used to use the annotation(e.g : @Value, @Required) on the class side, if not called here it wont function as expected -->
+<context:annotation-config />
+
+<bean id="jdbc" class="com.seleniumexpress.springframework.spring_property_file_JDBC_connection.JDBCConnection" >
+   
+</bean>
+
+
+</beans>
